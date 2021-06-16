@@ -1,15 +1,11 @@
 package com.fju.order;
 
-public class OrderSideMeal extends Order {
+public class OrderSideMeal {
 
-    public OrderSideMeal(int number) {
-        cost(number);
-    }
+    int money;
 
-
-    @Override
-    public int cost(int combo) {
-        switch (combo) {
+    public int cost(int number) {
+        switch (number) {
             case 1 :
                 money += 55;
                 break;

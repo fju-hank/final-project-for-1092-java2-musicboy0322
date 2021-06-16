@@ -1,11 +1,9 @@
 package com.fju.order;
 
-public class OrderMainMeal extends Order {
+public class OrderMainMeal {
 
-    public OrderMainMeal(int number) {
-        cost(number);
-    }
-
+    int money;
+    
     public int cost(int combo) {
         switch (combo) {
             case 1 :
