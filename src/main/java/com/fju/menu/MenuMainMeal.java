@@ -5,8 +5,7 @@ import java.util.ArrayList;
 
 public class MenuMainMeal extends Menu {
 
-    @Override
-    public void getMenu() {
+    public MenuMainMeal() {
         menu.add("Big Mac  $72");
         menu.add("Double Cheese Burger  $62");
         menu.add("Grilled BBQ Chicken Burger  $82");
@@ -20,8 +19,13 @@ public class MenuMainMeal extends Menu {
         menu.add("Filet-O-Fish  $44");
         menu.add("Smoked Chicken Long Burger  $74");
         menu.add("Ginger Pork Long Burger  $74");
+    }
+
+    @Override
+    public void print() {
         for (int i = 0; i < menu.size(); i++) {
             System.out.println((i + 1) + ") " + menu.get(i));
         }
     }
+
 }

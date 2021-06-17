@@ -6,7 +6,7 @@ public abstract class Menu {
 
     ArrayList<String> menu = new ArrayList<>();
 
-    public abstract void getMenu();
+    public abstract void print();
 
 
 }

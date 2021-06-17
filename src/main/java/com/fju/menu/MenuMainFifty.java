@@ -2,8 +2,7 @@ package com.fju.menu;
 
 public class MenuMainFifty extends Menu {
 
-    @Override
-    public void getMenu() {
+    public MenuMainFifty() {
         menu.add("Beef Burger");
         menu.add("Chicken McNuggets(4pcs)");
         menu.add("Small Fries");
@@ -12,7 +11,10 @@ public class MenuMainFifty extends Menu {
         menu.add("French Mustard Chicken Burger");
         menu.add("Spicy Chicken wing(2pcs)");
         menu.add("Grilled BBQ Chicken wing(2pcs)");
+    }
 
+    @Override
+    public void print() {
         for (int i = 0; i < menu.size(); i++) {
             System.out.println((i + 1) + ") " + menu.get(i));
         }

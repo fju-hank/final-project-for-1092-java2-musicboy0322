@@ -22,34 +22,40 @@ public class Tester {
         OrderMainMeal orderMainMeal = new OrderMainMeal();
         OrderSideMeal orderSideMeal = new OrderSideMeal();
         OrderFifty orderFifty = new OrderFifty();
-        int total = 0;
-
 
         System.out.println("Welcome to McDonald, choose what king of combination you want to buy");
-        System.out.println("1) Standard Meal");
-        System.out.println("2) Fifty Dollars Meal");
-        int combination = scanner.nextInt();
-        if(combination == 1) {
-            System.out.println("Choose your main meal");
-            menuMainMeal.getMenu();
-            int mainOrder = scanner.nextInt();
-            total += orderMainMeal.cost(mainOrder);
-            System.out.println("Total : " + total + " dollars");
-            System.out.println("Choose your side meal");
-            menuSideMeal.getMenu();
-            int sideOrder = scanner.nextInt();
-            total += orderSideMeal.cost(sideOrder);
-            System.out.println("Total : " + total + " dollars");
-        } else if (combination == 2) {
-            System.out.println("Choose your main meal");
-            menuMainFifty.getMenu();
-            int fiftyMainOrder = scanner.nextInt();
-            System.out.println("Choose your side meal");
-            menuSideFifty.getMenu();
-            int fiftySideOrder = scanner.nextInt();
-            total = orderFifty.cost(fiftyMainOrder, fiftySideOrder);
-            System.out.println("Total : " + total + " dollars");
+        while(true) {
+            int total = orderMainMeal.getMoney() + orderSideMeal.getMoney() + orderFifty.getMoney();
+            System.out.println("1) Standard Meal");
+            System.out.println("2) Fifty Dollars Meal");
+            System.out.println("3) Leave");
+            int combination = scanner.nextInt();
+            if(combination == 1) {
+                System.out.println("Choose your main meal");
+                menuMainMeal.print();
+                int mainOrder = scanner.nextInt();
+                orderMainMeal.setMoneyCurrentMoney(mainOrder);
+                System.out.println("Total : " +  (total + orderMainMeal.getCurrentMoney()) + " dollars");
+                System.out.println("Choose your side meal");
+                menuSideMeal.print();
+                int sideOrder = scanner.nextInt();
+                orderSideMeal.setMoneyCurrentMoney(sideOrder);
+                System.out.println("Total : " + (total + orderSideMeal.getCurrentMoney() + orderMainMeal.getCurrentMoney()) + " dollars");
+            } else if (combination == 2) {
+                System.out.println("Choose your main meal");
+                menuMainFifty.print();
+                int fiftyMainOrder = scanner.nextInt();
+                System.out.println("Choose your side meal");
+                menuSideFifty.print();
+                int fiftySideOrder = scanner.nextInt();
+                orderFifty.setMoneyCurrentMoney(fiftyMainOrder, fiftySideOrder);
+                System.out.println("Total : " + (total + orderFifty.getCurrentMoney()) + " dollars");
+            } else if (combination == 3) {
+                break;
+            }
         }
+        System.out.println("Thanks for coming");
+
 
 
     }
