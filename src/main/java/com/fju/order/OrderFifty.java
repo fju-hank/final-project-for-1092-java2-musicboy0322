@@ -5,7 +5,7 @@ public class OrderFifty {
     int money;
     int currentMoney;
 
-    public void setMoneyCurrentMoney(int number1, int number2) {
+    public void setMoneyCurrentMoney(int order1, int order2) {
         currentMoney = 0;
         money += 50;
         currentMoney += 50;

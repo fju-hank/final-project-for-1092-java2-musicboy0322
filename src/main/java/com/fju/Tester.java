@@ -7,6 +7,7 @@ import com.fju.menu.MenuSideMeal;
 import com.fju.order.OrderFifty;
 import com.fju.order.OrderMainMeal;
 import com.fju.order.OrderSideMeal;
+import com.fju.points.Point;
 
 import java.util.Scanner;
 
@@ -22,13 +23,14 @@ public class Tester {
         OrderMainMeal orderMainMeal = new OrderMainMeal();
         OrderSideMeal orderSideMeal = new OrderSideMeal();
         OrderFifty orderFifty = new OrderFifty();
+        Point point = new Point();
 
         System.out.println("Welcome to McDonald, choose what king of combination you want to buy");
         while(true) {
             int total = orderMainMeal.getMoney() + orderSideMeal.getMoney() + orderFifty.getMoney();
             System.out.println("1) Standard Meal");
             System.out.println("2) Fifty Dollars Meal");
-            System.out.println("3) Leave");
+            System.out.println("3) Finish");
             int combination = scanner.nextInt();
             if(combination == 1) {
                 System.out.println("Choose your main meal");
@@ -51,10 +53,12 @@ public class Tester {
                 orderFifty.setMoneyCurrentMoney(fiftyMainOrder, fiftySideOrder);
                 System.out.println("Total : " + (total + orderFifty.getCurrentMoney()) + " dollars");
             } else if (combination == 3) {
+                point.getTotal(total);
+                point.start();
+                System.out.println("Total is " + total + " dollars" + ", and your point is " + point.getPoint());
                 break;
             }
         }
-        System.out.println("Thanks for coming");
 
 
 
