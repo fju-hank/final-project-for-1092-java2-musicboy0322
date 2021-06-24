@@ -1,5 +1,4 @@
-package com.fju;
-
+package com.fju.time;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -8,24 +7,23 @@ import java.net.URLConnection;
 import java.util.Date;
 import java.util.TimeZone;
 
-public class Demo {
+public class Time {
 
-    public static void main(String[] args) {
+    public void getTime() {
 
-        String google = "https://www.google.com";
+        String google = "http://www.google.com";
         try {
             URL url = new URL(google);
             URLConnection connection = url.openConnection();
             connection.connect();
-            Long mileSecond = connection.getDate();
-            Date date = new Date(mileSecond);
+            Long mileSeconds = connection.getDate();
+            Date date = new Date(mileSeconds);
             System.out.println(date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " )");
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
 
     }
 

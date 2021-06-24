@@ -1,13 +1,11 @@
 package com.fju;
 
-import com.fju.menu.MenuMainFifty;
-import com.fju.menu.MenuMainMeal;
-import com.fju.menu.MenuSideFifty;
-import com.fju.menu.MenuSideMeal;
+import com.fju.menu.*;
 import com.fju.order.OrderFifty;
 import com.fju.order.OrderMainMeal;
 import com.fju.order.OrderSideMeal;
 import com.fju.points.Point;
+import com.fju.time.Time;
 
 import java.util.Scanner;
 
@@ -24,8 +22,10 @@ public class Tester {
         OrderSideMeal orderSideMeal = new OrderSideMeal();
         OrderFifty orderFifty = new OrderFifty();
         Point point = new Point();
+        Time instantTime = new Time();
 
-        System.out.println("Welcome to McDonald, choose what king of combination you want to buy");
+        System.out.print("Welcome to McDonald's, choose what kind of combination you want to buy( Current Time is " );
+        instantTime.getTime();
         while(true) {
             int total = orderMainMeal.getMoney() + orderSideMeal.getMoney() + orderFifty.getMoney();
             System.out.println("1) Standard Meal");
@@ -59,8 +59,6 @@ public class Tester {
                 break;
             }
         }
-
-
 
     }
 
