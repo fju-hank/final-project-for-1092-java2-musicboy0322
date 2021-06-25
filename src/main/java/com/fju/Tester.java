@@ -1,5 +1,6 @@
 package com.fju;
 
+import com.fju.voucher.Voucher;
 import com.fju.menu.*;
 import com.fju.order.OrderFifty;
 import com.fju.order.OrderMainMeal;
@@ -23,6 +24,7 @@ public class Tester {
         OrderFifty orderFifty = new OrderFifty();
         Point point = new Point();
         Time instantTime = new Time();
+        Voucher voucher = new Voucher();
 
         System.out.print("Welcome to McDonald's, choose what kind of combination you want to buy( Current Time is " );
         instantTime.getTime();
@@ -59,7 +61,9 @@ public class Tester {
                 break;
             }
         }
-
+        System.out.println("Because we have a promotion now, please type your name to get your voucher");
+        scanner.next();
+        voucher.vouchers();
     }
 
 }
