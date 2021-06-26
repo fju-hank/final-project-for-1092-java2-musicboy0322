@@ -6,7 +6,7 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.Date;
 
-public class Time {
+public class CurrentTime {
         public void getTime() {
             String google = "http://www.google.com";
             try {
