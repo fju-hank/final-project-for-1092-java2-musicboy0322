@@ -68,9 +68,15 @@ public class Tester {
                 break;
             }
         }
-        System.out.println("Because we have a promotion now, please type your name to get your voucher");
-        scanner.next();
-        voucher.vouchers();
+        System.out.println("Because we have a promotion now, please type your name to get your voucher, if you don't want, please type no");
+        String name = scanner.next();
+        if (name.equals("no") || name.equals("No") || name.equals("NO")) {
+            System.out.println("Thank you for coming, hope you have a great day");
+        } else {
+            voucher.vouchers();
+            System.out.println("Thank you for coming, hope you have a great day");
+        }
+
     }
 
 }
